@@ -18,15 +18,23 @@ def read():
 
     return data
 
-u = User("A", 1111)
-u2 = User("B", 1111)
-u3 = User("C", 1234)
-lst = [u, u2, u3]
 
-
-menu = ("1. Kirish"
+menu = ("1. Kirish\n"
         "2. Ro'yxat o'tish")
 
 while True:
     print(menu)
-    choice = input()
+    choice = input(">>> ")
+    if choice == "1":
+        name = input("name = ")
+        password = int(input("password = "))
+        data = read()
+        bormi = False
+        for user in data:
+            if user.name == name and user.password == password:
+                bormi = True
+                break
+        if bormi:
+            print("Xush kelibsiz", name)
+        else:
+            print("Sizga kirish mumkin emas!")
