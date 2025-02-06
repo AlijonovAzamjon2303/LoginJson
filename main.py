@@ -38,3 +38,10 @@ while True:
             print("Xush kelibsiz", name)
         else:
             print("Sizga kirish mumkin emas!")
+    elif choice == "2":
+        data = read()
+        name = input("name = ")
+        password = int(input("password = "))
+        user = User(name, password)
+        data.append(user)
+        write(data)
